@@ -31,14 +31,10 @@ dayone_val
         sum1 (+ val1 val2 val3)
         sum2 (+ val2 val3 val4)
         is_greater (> sum2 sum1)
-        next_val (if is_greater (+ 1 cur_count) cur_count)
-        ]
+        next_val (if is_greater (+ 1 cur_count) cur_count)]
     (if (nil? remaining)
       next_val
-      (task2 (drop 1 cur_list) next_val)
-      )
-    )
-  )
+      (task2 (drop 1 cur_list) next_val))))
 
 (def dayone2_val (task2 data 0))
 
