@@ -78,10 +78,12 @@
         ]
     (if (nil? xs)
         [(:last-num last-board-data) (:board last-board-data) (:nums-marked last-board-data)]
-      (let [possible-boards (filter some? (map #(return-if-bingo new-nums %) boards))]
-        (if (empty? possible-boards)
+      (let [possible-boards (filter some? (map #(return-if-bingo new-nums %) boards))
+            new-board (if (some? possible-boards) (first (filter #(not (has-bingo cur-nums %)) possible-boards)) nil)
+            ]
+        (if (some? new-board)
+          (do-stuff-2 xs new-nums boards {:board new-board :last-num x :nums-marked new-nums})
           (do-stuff-2 xs new-nums boards last-board-data)
-          (do-stuff-2 xs new-nums boards {:board (first possible-boards) :last-num x :nums-marked new-nums})
           )
         )
       )
@@ -96,7 +98,6 @@
         ]
       (->> flat-board
       (#(s/difference % final-nums-s))
-      (println)
       (reduce +)
       (* final-num)
       )
@@ -113,5 +114,6 @@
     )
 
 (final (do-stuff bingo_nums [] boards))
-;; this did not work (final (do-stuff-2 bingo_nums [] boards nil))
+
+(final (do-stuff-2 bingo_nums [] boards nil))
 
