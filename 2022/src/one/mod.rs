@@ -1,4 +1,5 @@
 use std::fs;
+#[allow(dead_code)]
 pub fn task1() {
     let input = "src/one/input.txt";
 
@@ -15,6 +16,7 @@ pub fn task1() {
     println!("Taks1: \n{:?}", x);
 }
 
+#[allow(dead_code)]
 pub fn task2() {
     let input = "src/one/input.txt";
 
