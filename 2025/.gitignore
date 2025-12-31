@@ -1,0 +1,33 @@
+# Haskell / GHC
+dist/
+dist-*/
+.cabal-sandbox/
+cabal.sandbox.config
+.stack-work/
+
+# GHC build artifacts
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+*.hie
+
+# Profiling & coverage
+*.prof
+*.hp
+*.eventlog
+.hpc/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.nvim/

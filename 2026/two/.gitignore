@@ -1,0 +1,25 @@
+# Rust / Cargo
+/target/
+**/target/
+
+# Rustfmt backup
+*.rs.bk
+
+# Cargo lockfile policy:
+# - Keep Cargo.lock for binaries (apps)
+# - Usually ignore for libraries
+# Cargo.lock
+
+# IDEs / editors
+.vscode/
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.nvim/
